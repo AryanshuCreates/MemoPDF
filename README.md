@@ -1,4 +1,6 @@
-# PDF Reader with Page Memory - Electron + React + MUI
+# MemoPDF
+
+## PDF Reader with Page Memory - Electron + React + MUI
 
 [![Electron](https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=electron&logoColor=white)](https://www.electronjs.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
