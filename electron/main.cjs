@@ -1,6 +1,5 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain, dialog } = require("electron");
 const path = require("path");
-const { ipcMain } = require("electron");
 const storage = require("./storage.cjs");
 
 ipcMain.handle("load-pages", () => storage.load());
@@ -9,6 +8,17 @@ ipcMain.on("save-page", (event, { file, page }) => {
   data[file] = page;
   storage.save(data);
 });
+
+ipcMain.handle("open-file", async () => {
+  const { canceled, filePaths } = await dialog.showOpenDialog({
+    properties: ["openFile"],
+    filters: [{ name: "PDFs", extensions: ["pdf"] }],
+  });
+  if (canceled || filePaths.length === 0) return null;
+  return filePaths[0]; // full absolute path
+});
+
+// ...rest as before
 
 function createWindow() {
   const win = new BrowserWindow({
