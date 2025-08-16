@@ -25,7 +25,7 @@ A lightweight cross-platform PDF reader built with Electron and React that remem
 ## Installation
 
 Make sure you have Node.js (v16+) and npm installed.
-git clone https://github.com/yourusername/pdf-reader.git
+git clone https://github.com/AryanshuCreates/MemoPDF.git
 cd pdf-reader
 npm install
 
